@@ -181,36 +181,54 @@ border border-white/20 text-black dark:text-white p-8 rounded-xl mb-8 shadow">
 
         </div>
 
-        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20  text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
-        transition-all duration-300">
+        <div
+            class="relative bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 p-5 rounded-xl shadow">
 
             <h2 class="text-xl font-semibold mb-6">
                 Project Portfolio
             </h2>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Slider Buttons -->
+            <div class="flex justify-between mb-4">
+                <button (click)="prev()"
+                    class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition disabled:opacity-50"
+                    [disabled]="currentIndex === 0">
+                    ◀ Previous
+                </button>
+                <button (click)="next()"
+                    class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition"
+                    [disabled]="currentIndex + visibleCount >= projects.length">
+                    Next ▶
+                </button>
+            </div>
 
-                <div *ngFor="let project of projects" class="bg-white/20 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
-                transition-all duration-300">
+            <!-- Sliding Wrapper -->
+            <div class="overflow-hidden">
+                <div class="flex gap-6 transition-transform duration-500 ease-in-out"
+                    [style.transform]="'translateX(' + translateX + ')'">
 
-                    <h3 class="text-lg font-semibold">
-                        {{project.name}}
-                    </h3>
+                    <div *ngFor="let project of projects"
+                        class="min-w-[calc(100%/3)] bg-white/20 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 p-5 rounded-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
 
-                    <p class="text-gray-300 text-sm mt-2">
-                        {{project.description}}
-                    </p>
+                        <h3 class="text-lg font-semibold">
+                            {{project.name}}
+                        </h3>
 
-                    <p class="text-sm mt-3 text-blue-400">
-                        {{project.tech}}
-                    </p>
+                        <p class="text-gray-300 text-sm mt-2">
+                            {{project.description}}
+                        </p>
 
-                    <p class="text-xs text-gray-500 mt-2">
-                        {{project.architecture}}
-                    </p>
+                        <p class="text-sm mt-3 text-blue-400 flex flex-wrap gap-1">
+                            <span *ngFor="let tech of project.tech"
+                                class="bg-blue-500/20 px-2 py-1 rounded">{{tech}}</span>
+                        </p>
 
+                        <p class="text-xs text-gray-500 mt-2">
+                            {{project.architecture}}
+                        </p>
+
+                    </div>
                 </div>
-
             </div>
 
         </div>

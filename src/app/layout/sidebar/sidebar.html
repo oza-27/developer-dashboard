@@ -1,37 +1,90 @@
-<div class="h-full bg-slate-800 p-5">
+<div class="h-full bg-gradient-to-b from-slate-800 to-slate-900 shadow-xl flex flex-col transition-all duration-300"
+    [ngClass]="{ 'w-64': !collapsed, 'w-20': collapsed }">
 
-    <h1 class="text-xl font-bold mb-8">
-        Dev Dashboard
-    </h1>
+    <!-- Toggle Button -->
+    <button (click)="collapsed = !collapsed" class="text-gray-400 hover:text-white p-3 focus:outline-none self-end">
+        <span *ngIf="!collapsed">⬅️</span>
+        <span *ngIf="collapsed">➡️</span>
+    </button>
 
-    <nav class="space-y-3 text-sm">
+    <!-- Logo / Title -->
+    <div class="flex items-center justify-center py-6">
+        <h1 class="text-white font-bold text-xl transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed }">Dev
+            Dashboard</h1>
+    </div>
 
-        <a routerLink="/" routerLinkActive="text-indigo-400 font-semibold" [routerLinkActiveOptions]="{exact:true}"
-            class="block hover:text-indigo-400">
-            Dashboard
+    <!-- Navigation -->
+    <nav class="flex-1 flex flex-col mt-4 space-y-1 relative">
+
+        <!-- Dashboard -->
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"
+            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
+
+            <!-- Active Indicator -->
+            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+                *ngIf="isActiveRoute('/')"></span>
+
+            <span class="text-lg">🏠</span>
+            <span class="transition-all duration-300"
+                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Dashboard</span>
         </a>
 
-        <a routerLink="/frontend" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
-            Frontend Skills
+        <!-- Frontend Skills -->
+        <a routerLink="/frontend" routerLinkActive="active-link"
+            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
+            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+                *ngIf="isActiveRoute('/frontend')"></span>
+            <span class="text-lg">💻</span>
+            <span class="transition-all duration-300"
+                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Frontend Skills</span>
         </a>
 
-        <a routerLink="/backend" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
-            Backend Skills
+        <!-- Backend Skills -->
+        <a routerLink="/backend" routerLinkActive="active-link"
+            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
+            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+                *ngIf="isActiveRoute('/backend')"></span>
+            <span class="text-lg">🛠️</span>
+            <span class="transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Backend
+                Skills</span>
         </a>
 
-        <a routerLink="/ai" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
-            AI Skills
+        <!-- AI Skills -->
+        <a routerLink="/ai" routerLinkActive="active-link"
+            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
+            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+                *ngIf="isActiveRoute('/ai')"></span>
+            <span class="text-lg">🤖</span>
+            <span class="transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">AI
+                Skills</span>
         </a>
 
-        <a routerLink="/projects" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
-            Projects
+        <!-- Projects -->
+        <a routerLink="/projects" routerLinkActive="active-link"
+            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
+            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+                *ngIf="isActiveRoute('/projects')"></span>
+            <span class="text-lg">📁</span>
+            <span class="transition-all duration-300"
+                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Projects</span>
         </a>
 
-        <a routerLink="/architecture" routerLinkActive="text-indigo-400 font-semibold"
-            class="block hover:text-indigo-400">
-            Architecture
+        <!-- Architecture -->
+        <a routerLink="/architecture" routerLinkActive="active-link"
+            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
+            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+                *ngIf="isActiveRoute('/architecture')"></span>
+            <span class="text-lg">🏗️</span>
+            <span class="transition-all duration-300"
+                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Architecture</span>
         </a>
 
     </nav>
+
+    <!-- Footer -->
+    <div class="mt-auto text-center text-gray-500 text-xs py-4 transition-all duration-300"
+        [ngClass]="{ 'opacity-0': collapsed }">
+        © 2026 Soumy Oza
+    </div>
 
 </div>

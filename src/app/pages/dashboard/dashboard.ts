@@ -37,29 +37,100 @@ export class Dashboard implements OnInit {
 
   projects = [
     {
-      name: 'Invoice SaaS Platform',
-      description: 'A SaaS platform to generate invoices and manage clients.',
-      tech: 'Angular • .NET Core • PostgreSQL',
-      architecture: 'JWT Auth • REST APIs • Clean Architecture'
+      name: "ERP Web Platform",
+      description:
+        "Developed modern ERP modules using Angular with scalable architecture and secure authentication. Implemented integration with Microsoft Dynamics 365 Finance & Operations services to synchronize enterprise data and streamline business processes.",
+      tech: [
+        "Angular",
+        "TypeScript",
+        ".NET Core",
+        "REST API",
+        "Microsoft Dynamics F&O"
+      ],
+      architecture: "Architecture: Enterprise ERP System • API Integration",
+      github: "",
+      demo: ""
     },
     {
-      name: 'Records Dashboard',
-      description: 'Analytics dashboard for tracking promotions and active customers.',
-      tech: 'Angular • Web API • SQL',
-      architecture: 'Data Visualization • API Integration'
+      name: "HiMapp ERP API",
+      description:
+        "Designed scalable backend APIs using .NET Core to power ERP modules with JWT authentication and optimized PostgreSQL queries.",
+      tech: [".NET Core", "EF Core", "PostgreSQL", "JWT"],
+      architecture: "Architecture: REST API • Repository Pattern",
+      github: "",
+      demo: ""
     },
     {
-      name: 'Dynamics Asset Integration',
-      description: 'System integration between Dynamics and internal asset management.',
-      tech: '.NET Core • PostgreSQL',
-      architecture: 'Sync APIs • Data Mapping'
+      name: "Revords Rewards App",
+      description:
+        "Mobile rewards platform where users spin promotional wheels to earn rewards and cashback at partner restaurants.",
+      tech: ["React Native", "Firebase"],
+      architecture: "Architecture: Mobile Rewards Platform",
+      github: "",
+      demo: ""
+    },
+    {
+      name: "Revords Web Platform",
+      description:
+        "Spin-wheel promotional web application allowing users to win prizes and promo codes using Angular frontend and .NET backend.",
+      tech: ["Angular", ".NET Core", "TypeScript"],
+      architecture: "Architecture: Full Stack Web Application",
+      github: "",
+      demo: ""
+    },
+    {
+      name: "E-Commerce Bookstore",
+      description:
+        "Online bookstore platform enabling users to buy and exchange books with scalable backend services.",
+      tech: [".NET Framework", "C#", "SQL"],
+      architecture: "Architecture: E-Commerce System",
+      github: "",
+      demo: ""
+    },
+    {
+      name: "Revords Android Launcher",
+      description:
+        "Custom Android tablet launcher built with Flutter supporting kiosk mode and application management.",
+      tech: ["Flutter", "Android"],
+      architecture: "Architecture: Android Launcher",
+      github: "",
+      demo: ""
+    },
+    {
+      name: "RPA Automation System",
+      description:
+        "Built Python automation workflows to automate repetitive tasks such as data extraction, reporting, and system navigation.",
+      tech: ["Python", "Automation", "RPA"],
+      architecture: "Architecture: Process Automation",
+      github: "",
+      demo: ""
     }
   ];
+
+  currentIndex = 0;
+  visibleCount = 3; // show 3 projects at a time
+
+  // Compute total width shift for sliding
+  get translateX() {
+    return `-${(this.currentIndex / this.visibleCount) * 100}%`;
+  }
+
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex -= 1;
+    }
+  }
+
+  next() {
+    if (this.currentIndex + this.visibleCount < this.projects.length) {
+      this.currentIndex += 1;
+    }
+  }
 
   architecture = [
     {
       layer: 'Frontend',
-      tech: 'Angular + Tailwind',
+      tech: 'React, Angular + Tailwind',
       description: 'Responsive UI with component-driven architecture.'
     },
     {
