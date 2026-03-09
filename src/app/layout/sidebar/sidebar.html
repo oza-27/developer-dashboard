@@ -6,27 +6,29 @@
 
     <nav class="space-y-3 text-sm">
 
-        <a routerLink="/" class="block hover:text-indigo-400">
+        <a routerLink="/" routerLinkActive="text-indigo-400 font-semibold" [routerLinkActiveOptions]="{exact:true}"
+            class="block hover:text-indigo-400">
             Dashboard
         </a>
 
-        <a routerLink="/frontend" class="block hover:text-indigo-400">
+        <a routerLink="/frontend" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
             Frontend Skills
         </a>
 
-        <a routerLink="/backend" class="block hover:text-indigo-400">
+        <a routerLink="/backend" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
             Backend Skills
         </a>
 
-        <a routerLink="/ai" class="block hover:text-indigo-400">
+        <a routerLink="/ai" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
             AI Skills
         </a>
 
-        <a routerLink="/projects" class="block hover:text-indigo-400">
+        <a routerLink="/projects" routerLinkActive="text-indigo-400 font-semibold" class="block hover:text-indigo-400">
             Projects
         </a>
 
-        <a routerLink="/architecture" class="block hover:text-indigo-400">
+        <a routerLink="/architecture" routerLinkActive="text-indigo-400 font-semibold"
+            class="block hover:text-indigo-400">
             Architecture
         </a>
 

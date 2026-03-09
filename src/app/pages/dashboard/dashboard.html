@@ -2,7 +2,7 @@
 
     <div class="flex justify-end">
         <button (click)="toggleTheme()"
-            class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-slate-700 text-black dark:text-white hover:scale-105 transition">
+            class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-slate-700 text-black dark:text-white hover:scale-105 hover:shadow-2xl transition-all duration-300 transition">
 
             <span *ngIf="!isDarkMode">🌙 Dark Mode</span>
             <span *ngIf="isDarkMode">☀️ Light Mode</span>
@@ -90,17 +90,31 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
 
-            <div class="bg-slate-200 dark:bg-slate-200 dark:bg-slate-700 p-3 rounded">Angular</div>
-            <div class="bg-slate-200 dark:bg-slate-200 dark:bg-slate-700 p-3 rounded">TypeScript</div>
-            <div class="bg-slate-200 dark:bg-slate-200 dark:bg-slate-700 p-3 rounded">Tailwind</div>
-            <div class="bg-slate-200 dark:bg-slate-200 dark:bg-slate-700 p-3 rounded">RxJS</div>
+            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Angular</div>
+            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">TypeScript</div>
+            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Tailwind</div>
+            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">RxJS</div>
 
             <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">.NET Core</div>
             <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Web API</div>
             <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">PostgreSQL</div>
-            <div class="bg-slate-200 dark:bg-slate-200 dark:bg-slate-700 p-3 rounded">Dapper</div>
+            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Dapper</div>
 
         </div>
+    </div>
+
+    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
+
+        <h2 class="text-xl font-semibold mb-4">
+            Currently Learning
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <li>AI Agent Systems</li>
+            <li>LLM Integrations</li>
+            <li>Advanced System Design</li>
+        </ul>
+
     </div>
 
     <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
@@ -145,7 +159,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <div *ngFor="let project of projects"
-                class="bg-slate-700 p-5 rounded-lg hover:scale-105 hover:shadow-xl transition duration-300">
+                class="bg-slate-700 p-5 rounded-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:shadow-xl transition duration-300">
 
                 <h3 class="text-lg font-semibold">
                     {{project.name}}
@@ -215,13 +229,24 @@
     <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
 
         <h2 class="text-xl font-semibold mb-6">
+            GitHub Activity
+        </h2>
+
+        <img src="https://github-readme-activity-graph.vercel.app/graph?username=oza-27&theme=tokyo-night"
+            class="w-full rounded-lg" />
+
+    </div>
+
+    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
+
+        <h2 class="text-xl font-semibold mb-6">
             Developer Metrics
         </h2>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
 
             <div *ngFor="let metric of metrics"
-                class="bg-slate-700 p-5 rounded-lg text-center hover:scale-105 transition">
+                class="bg-slate-700 p-5 rounded-lg text-center hover:scale-105 hover:shadow-2xl transition-all duration-300 transition">
 
                 <p class="text-3xl font-bold text-blue-400">
                     {{metric.value}}
@@ -243,11 +268,12 @@
             Developer Journey
         </h2>
 
-        <div class="relative border-l border-slate-600 pl-6 space-y-8">
+        <div class="relative border-l-2 border-slate-600 space-y-8">
 
-            <div *ngFor="let item of timeline" class="relative">
+            <div *ngFor="let item of timeline" class="relative pl-6">
 
-                <div class="absolute -left-3 top-1 w-6 h-6 bg-blue-500 rounded-full"></div>
+                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50">
+                </div>
 
                 <p class="text-sm text-blue-400 font-semibold">
                     {{item.year}}

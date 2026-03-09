@@ -77,34 +77,53 @@ export class Dashboard implements OnInit {
       description: 'AI capabilities integrated via APIs for automation and insights.'
     }
   ];
-
   chartOptions: any = {
     series: [
       {
         name: 'Skill Level',
-        data: [90, 88, 85, 65]
+        data: [90, 88, 85, 65, 80]
       }
     ],
+
     chart: {
       type: 'radar',
       height: 350,
-      toolbar: { show: false }
+      toolbar: {
+        show: false
+      }
     },
 
     xaxis: {
-      categories: ['Frontend', 'Backend', 'Database', 'AI'],
+      categories: ['Frontend', 'Backend', 'Database', 'AI', 'System Design'],
       labels: {
         style: {
-          colors: ['#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF']
+          colors: ['#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF']
         }
       }
+    },
+
+    colors: ['#3b82f6'],
+
+    stroke: {
+      width: 2
+    },
+
+    fill: {
+      opacity: 0.3
+    },
+
+    markers: {
+      size: 5
     },
 
     tooltip: {
       theme: 'dark'
     },
 
-    colors: ['#3b82f6']
+    yaxis: {
+      show: false,
+      max: 100
+    }
   };
 
   metrics = [
@@ -114,11 +133,11 @@ export class Dashboard implements OnInit {
     },
     {
       title: 'APIs Developed',
-      value: '18+'
+      value: '50+'
     },
     {
       title: 'Database Queries',
-      value: '120+'
+      value: '150+'
     },
     {
       title: 'AI Integrations',
@@ -133,23 +152,23 @@ export class Dashboard implements OnInit {
   timeline = [
     {
       year: '2023',
-      title: 'Started Full Stack Development',
-      description: 'Focused on Angular, TypeScript and frontend architecture.'
+      title: 'Started Software Development Journey',
+      description: 'Completed a 6-month internship as a .NET Developer while learning Angular and building full-stack applications using .NET Web API and TypeScript.'
     },
     {
       year: '2024',
-      title: 'Built Records Dashboard',
-      description: 'Developed analytics dashboard using Angular and .NET Web API.'
+      title: 'Full Stack Developer',
+      description: 'Worked as a Full Stack Developer building scalable web applications using Angular, React, .NET, and Node.js with REST APIs and modern frontend architecture.'
     },
     {
       year: '2025',
-      title: 'Built Invoice SaaS Platform',
-      description: 'Created a SaaS system with authentication, client and invoice management.'
+      title: 'Cloud & Modern Web Development',
+      description: 'Expanded skills in AWS cloud services, Next.js, system architecture, and performance-focused application development while also exploring Machine Learning algorithms.'
     },
     {
       year: '2026',
-      title: 'Exploring AI Integration',
-      description: 'Learning AI APIs and automation for modern applications.'
+      title: 'AI & System Architecture Focus',
+      description: 'Focused on Artificial Intelligence integrations, ML models, cloud architecture, and building intelligent systems with scalable backend design.'
     }
   ];
   ngOnInit() {
