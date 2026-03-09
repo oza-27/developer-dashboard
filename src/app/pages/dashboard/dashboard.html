@@ -1,211 +1,318 @@
-<div class="flex justify-end mb-4">
+<div class="relative min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-purple-100
+dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-6">
+    <div class="absolute -top-20 -left-20 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="flex justify-end">
-        <button (click)="toggleTheme()"
-            class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-slate-700 text-black dark:text-white hover:scale-105 hover:shadow-2xl transition-all duration-300 transition">
+    <div class="absolute top-40 right-0 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="flex justify-end mb-4">
 
-            <span *ngIf="!isDarkMode">🌙 Dark Mode</span>
-            <span *ngIf="isDarkMode">☀️ Light Mode</span>
+        <div class="flex justify-end">
+            <button (click)="toggleTheme()" class="px-4 py-2 rounded-xl
+bg-white/30 dark:bg-slate-700/40
+backdrop-blur-lg
+border border-white/20
+text-black dark:text-white
+hover:scale-105
+hover:shadow-xl
+transition-all duration-300">
 
-        </button>
-    </div>
+                <span *ngIf="!isDarkMode">🌙 Dark Mode</span>
+                <span *ngIf="isDarkMode">☀️ Light Mode</span>
 
-</div>
-<div class="space-y-8">
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-8 rounded-xl mb-8 shadow">
-
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-
-            <div>
-
-                <h1 class="text-3xl md:text-4xl font-bold">
-                    Soumy Oza
-                </h1>
-
-                <p class="text-blue-400 mt-2">
-                    Full Stack Developer | Angular | .NET | AI Explorer
-                </p>
-
-                <p class="text-gray-300 mt-3 max-w-xl">
-                    Full-stack engineer specializing in Angular and .NET Core,
-                    focused on building scalable SaaS platforms and enterprise dashboards.
-                    Currently exploring AI integrations to build intelligent software systems.
-                </p>
-
-            </div>
-
-            <div class="flex flex-wrap gap-3">
-
-                <a href="https://github.com/oza-27" target="_blank"
-                    class="bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-                    GitHub
-                </a>
-
-                <a href="https://www.linkedin.com/in/soumy-oza?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTbctO89JTj6%2BpkmiwIqegA%3D%3D"
-                    target="_blank" class="bg-slate-700 px-4 py-2 rounded-lg hover:bg-slate-600 transition">
-                    LinkedIn
-                </a>
-
-            </div>
-
+            </button>
         </div>
 
     </div>
-    <!-- Skill Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="space-y-8">
+        <div class="bg-white/30 dark:bg-slate-800/40
+backdrop-blur-lg
+border border-white/20 text-black dark:text-white p-8 rounded-xl mb-8 shadow">
 
-        <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-5 rounded-xl shadow">
-            <h3 class="text-gray-300 text-sm">Frontend</h3>
-            <p class="text-2xl font-bold mt-2">90%</p>
-            <p class="text-sm text-gray-500 mt-1">Angular • TypeScript</p>
-        </div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
-        <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-5 rounded-xl shadow">
-            <h3 class="text-gray-300 text-sm">Backend</h3>
-            <p class="text-2xl font-bold mt-2">88%</p>
-            <p class="text-sm text-gray-500 mt-1">.NET Core • Web API</p>
-        </div>
+                <div>
 
-        <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-5 rounded-xl shadow">
-            <h3 class="text-gray-300 text-sm">Database</h3>
-            <p class="text-2xl font-bold mt-2">85%</p>
-            <p class="text-sm text-gray-500 mt-1">PostgreSQL • SQL</p>
-        </div>
+                    <h1 class="text-3xl md:text-4xl font-bold">
+                        Soumy Oza
+                    </h1>
 
-        <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-5 rounded-xl shadow">
-            <h3 class="text-gray-300 text-sm">AI Learning</h3>
-            <p class="text-2xl font-bold mt-2">65%</p>
-            <p class="text-sm text-gray-500 mt-1">ML • AI APIs</p>
-        </div>
+                    <p class="text-blue-400 mt-2">
+                        Full Stack Developer | Angular | .NET | AI Explorer
+                    </p>
 
-    </div>
+                    <p class="text-gray-300 mt-3 max-w-xl">
+                        Full-stack engineer specializing in Angular and .NET Core,
+                        focused on building scalable SaaS platforms and enterprise dashboards.
+                        Currently exploring AI integrations to build intelligent software systems.
+                    </p>
 
-
-    <!-- Technology Stack Section -->
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-5">
-            Technology Stack
-        </h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Angular</div>
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">TypeScript</div>
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Tailwind</div>
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">RxJS</div>
-
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">.NET Core</div>
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Web API</div>
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">PostgreSQL</div>
-            <div class="bg-slate-200 dark:bg-slate-700 p-3 rounded">Dapper</div>
-
-        </div>
-    </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-4">
-            Currently Learning
-        </h2>
-
-        <ul class="list-disc list-inside text-gray-300 space-y-1">
-            <li>AI Agent Systems</li>
-            <li>LLM Integrations</li>
-            <li>Advanced System Design</li>
-        </ul>
-
-    </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-6">
-            Skill Proficiency
-        </h2>
-
-        <div class="space-y-6">
-
-            <div *ngFor="let skill of skills">
-
-                <div class="flex justify-between mb-1">
-                    <span class="font-medium">{{skill.name}}</span>
-                    <span class="text-sm text-gray-300">{{skill.percentage}}%</span>
                 </div>
 
-                <div class="w-full bg-slate-700 rounded-full h-3">
+                <div class="flex flex-wrap gap-3">
 
-                    <div class="bg-blue-500 h-3 rounded-full transition-all duration-1000"
-                        [style.width.%]="skill.percentage">
+                    <a href="https://github.com/oza-27" target="_blank"
+                        class="bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/soumy-oza?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTbctO89JTj6%2BpkmiwIqegA%3D%3D"
+                        target="_blank" class="bg-slate-700 px-4 py-2 rounded-lg hover:bg-slate-600 transition">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Skill Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+            transition-all duration-300">
+                <h3 class="text-gray-300 text-sm">Frontend</h3>
+                <p class="text-2xl font-bold mt-2">90%</p>
+                <p class="text-sm text-gray-500 mt-1">Angular • TypeScript</p>
+            </div>
+
+            <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+            transition-all duration-300">
+                <h3 class="text-gray-300 text-sm">Backend</h3>
+                <p class="text-2xl font-bold mt-2">88%</p>
+                <p class="text-sm text-gray-500 mt-1">.NET Core • Web API</p>
+            </div>
+
+            <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+            transition-all duration-300">
+                <h3 class="text-gray-300 text-sm">Database</h3>
+                <p class="text-2xl font-bold mt-2">85%</p>
+                <p class="text-sm text-gray-500 mt-1">PostgreSQL • SQL</p>
+            </div>
+
+            <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+            transition-all duration-300">
+                <h3 class="text-gray-300 text-sm">AI Learning</h3>
+                <p class="text-2xl font-bold mt-2">65%</p>
+                <p class="text-sm text-gray-500 mt-1">ML • AI APIs</p>
+            </div>
+
+        </div>
+
+        <div
+            class="absolute bottom-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+
+        <!-- Technology Stack Section -->
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-5">
+                Technology Stack
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    Angular</div>
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    TypeScript</div>
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    Tailwind</div>
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    RxJS</div>
+
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    .NET Core</div>
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">Web
+                    API</div>
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    PostgreSQL</div>
+                <div class="bg-white/30 dark:bg-slate-700/40 backdrop-blur-md border border-white/20 p-3 rounded-lg">
+                    Dapper</div>
+            </div>
+        </div>
+
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-4">
+                Currently Learning
+            </h2>
+
+            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                <li>AI Agent Systems</li>
+                <li>LLM Integrations</li>
+                <li>Advanced System Design</li>
+            </ul>
+
+        </div>
+
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg  border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-6">
+                Skill Proficiency
+            </h2>
+
+            <div class="space-y-6">
+
+                <div *ngFor="let skill of skills">
+
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium">{{skill.name}}</span>
+                        <span class="text-sm text-gray-300">{{skill.percentage}}%</span>
+                    </div>
+
+                    <div class="w-full bg-slate-700 rounded-full h-3">
+
+                        <div class="bg-blue-500 h-3 rounded-full transition-all duration-1000"
+                            [style.width.%]="skill.percentage">
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-300 mt-1">
+                        {{skill.technologies}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20  text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-6">
+                Project Portfolio
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div *ngFor="let project of projects" class="bg-white/20 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+                transition-all duration-300">
+
+                    <h3 class="text-lg font-semibold">
+                        {{project.name}}
+                    </h3>
+
+                    <p class="text-gray-300 text-sm mt-2">
+                        {{project.description}}
+                    </p>
+
+                    <p class="text-sm mt-3 text-blue-400">
+                        {{project.tech}}
+                    </p>
+
+                    <p class="text-xs text-gray-500 mt-2">
+                        {{project.architecture}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-6">
+                System Architecture
+            </h2>
+
+            <div class="space-y-6">
+
+                <div *ngFor="let layer of architecture"
+                    class="bg-slate-700 p-5 rounded-lg flex flex-col md:flex-row md:items-center md:justify-between">
+
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            {{layer.layer}}
+                        </h3>
+
+                        <p class="text-sm text-gray-300 mt-1">
+                            {{layer.description}}
+                        </p>
+                    </div>
+
+                    <div class="text-blue-400 text-sm mt-2 md:mt-0">
+                        {{layer.tech}}
                     </div>
 
                 </div>
 
-                <p class="text-sm text-gray-300 mt-1">
-                    {{skill.technologies}}
-                </p>
+            </div>
+
+        </div>
+
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-6">
+                Skill Analytics
+            </h2>
+
+            <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+                [colors]="chartOptions.colors">
+            </apx-chart>
+
+        </div>
+
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
+
+            <h2 class="text-xl font-semibold mb-6">
+                Developer Metrics
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                <div *ngFor="let metric of metrics"
+                    class="bg-slate-700 p-5 rounded-lg text-center hover:scale-105 hover:shadow-2xl transition-all duration-300 transition">
+
+                    <p class="text-3xl font-bold text-blue-400">
+                        {{metric.value}}
+                    </p>
+
+                    <p class="text-gray-300 text-sm mt-2">
+                        {{metric.title}}
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+        <div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl hover:scale-105 hover:shadow-2xl 
+        transition-all duration-300">
 
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
+            <h2 class="text-xl font-semibold mb-6">
+                Developer Journey
+            </h2>
 
-        <h2 class="text-xl font-semibold mb-6">
-            Project Portfolio
-        </h2>
+            <div class="relative border-l-2 border-slate-600 space-y-8">
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div *ngFor="let item of timeline" class="relative pl-6">
 
-            <div *ngFor="let project of projects"
-                class="bg-slate-700 p-5 rounded-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:shadow-xl transition duration-300">
+                    <div
+                        class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50">
+                    </div>
 
-                <h3 class="text-lg font-semibold">
-                    {{project.name}}
-                </h3>
+                    <p class="text-sm text-blue-400 font-semibold">
+                        {{item.year}}
+                    </p>
 
-                <p class="text-gray-300 text-sm mt-2">
-                    {{project.description}}
-                </p>
-
-                <p class="text-sm mt-3 text-blue-400">
-                    {{project.tech}}
-                </p>
-
-                <p class="text-xs text-gray-500 mt-2">
-                    {{project.architecture}}
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-6">
-            System Architecture
-        </h2>
-
-        <div class="space-y-6">
-
-            <div *ngFor="let layer of architecture"
-                class="bg-slate-700 p-5 rounded-lg flex flex-col md:flex-row md:items-center md:justify-between">
-
-                <div>
-                    <h3 class="font-semibold text-lg">
-                        {{layer.layer}}
+                    <h3 class="text-lg font-semibold mt-1">
+                        {{item.title}}
                     </h3>
 
-                    <p class="text-sm text-gray-300 mt-1">
-                        {{layer.description}}
+                    <p class="text-gray-300 text-sm mt-1">
+                        {{item.description}}
                     </p>
-                </div>
 
-                <div class="text-blue-400 text-sm mt-2 md:mt-0">
-                    {{layer.tech}}
                 </div>
 
             </div>
@@ -213,84 +320,4 @@
         </div>
 
     </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-6">
-            Skill Analytics
-        </h2>
-
-        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-            [colors]="chartOptions.colors">
-        </apx-chart>
-
-    </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-6">
-            GitHub Activity
-        </h2>
-
-        <img src="https://github-readme-activity-graph.vercel.app/graph?username=oza-27&theme=tokyo-night"
-            class="w-full rounded-lg" />
-
-    </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-6">
-            Developer Metrics
-        </h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-            <div *ngFor="let metric of metrics"
-                class="bg-slate-700 p-5 rounded-lg text-center hover:scale-105 hover:shadow-2xl transition-all duration-300 transition">
-
-                <p class="text-3xl font-bold text-blue-400">
-                    {{metric.value}}
-                </p>
-
-                <p class="text-gray-300 text-sm mt-2">
-                    {{metric.title}}
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="bg-white dark:bg-slate-800 text-black dark:text-white p-6 rounded-xl shadow">
-
-        <h2 class="text-xl font-semibold mb-6">
-            Developer Journey
-        </h2>
-
-        <div class="relative border-l-2 border-slate-600 space-y-8">
-
-            <div *ngFor="let item of timeline" class="relative pl-6">
-
-                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50">
-                </div>
-
-                <p class="text-sm text-blue-400 font-semibold">
-                    {{item.year}}
-                </p>
-
-                <h3 class="text-lg font-semibold mt-1">
-                    {{item.title}}
-                </h3>
-
-                <p class="text-gray-300 text-sm mt-1">
-                    {{item.description}}
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
 </div>

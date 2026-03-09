@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Legend } from 'chart.js';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 @Component({
@@ -82,7 +83,7 @@ export class Dashboard implements OnInit {
       {
         name: 'Skill Level',
         data: [90, 88, 85, 65, 80]
-      }
+      },
     ],
 
     chart: {
@@ -97,7 +98,7 @@ export class Dashboard implements OnInit {
       categories: ['Frontend', 'Backend', 'Database', 'AI', 'System Design'],
       labels: {
         style: {
-          colors: ['#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF']
+          colors: ['#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF', '#9CA3AF', "#0a0a0a"]
         }
       }
     },

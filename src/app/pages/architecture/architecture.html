@@ -1,42 +1,111 @@
-<div class="space-y-8">
+<div class="space-y-10">
 
-    <h1 class="text-3xl font-bold">System Architecture</h1>
+    <h1 class="text-4xl font-bold text-center text-white">
+        System Architecture
+    </h1>
 
-    <div class="space-y-6">
+    <p class="text-center text-gray-400 max-w-3xl mx-auto">
+        A scalable full-stack architecture designed using Angular for the frontend,
+        ASP.NET Core Web API for the backend, and PostgreSQL for data storage.
+        The system follows clean architecture principles ensuring maintainability,
+        performance, and scalability. Deployed on modern cloud platforms for high availability.
+    </p>
 
-        <div class="bg-slate-800 p-6 rounded-xl">
+    <div class="grid md:grid-cols-4 gap-8">
 
-            <h3 class="font-semibold text-lg">
+        <!-- Frontend -->
+        <div
+            class="bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300">
+
+            <div class="text-4xl mb-4">⚡</div>
+
+            <h3 class="text-xl font-semibold text-white">
                 Frontend Layer
             </h3>
 
-            <p class="text-gray-300 mt-2">
-                Angular SPA consuming backend APIs.
+            <p class="text-gray-400 mt-3">
+                Modern Angular SPA delivering fast and interactive user experiences.
             </p>
+
+            <ul class="mt-4 space-y-2 text-gray-300 text-sm">
+                <li>• Angular 17 Standalone Components</li>
+                <li>• RxJS for reactive programming</li>
+                <li>• TailwindCSS + Angular Material UI</li>
+                <li>• REST API Integration</li>
+                <li>• Authentication & Route Guards</li>
+            </ul>
 
         </div>
 
-        <div class="bg-slate-800 p-6 rounded-xl">
+        <!-- Backend -->
+        <div
+            class="bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-300">
 
-            <h3 class="font-semibold text-lg">
+            <div class="text-4xl mb-4">🧠</div>
+
+            <h3 class="text-xl font-semibold text-white">
                 Backend Layer
             </h3>
 
-            <p class="text-gray-300 mt-2">
-                ASP.NET Core Web API following Clean Architecture.
+            <p class="text-gray-400 mt-3">
+                ASP.NET Core Web API implementing Clean Architecture with scalable services and domain-driven design.
             </p>
+
+            <ul class="mt-4 space-y-2 text-gray-300 text-sm">
+                <li>• ASP.NET Core Web API</li>
+                <li>• EF Core + Dapper ORM for data access</li>
+                <li>• Clean Architecture Pattern</li>
+                <li>• JWT Authentication</li>
+                <li>• Service & Repository Layers</li>
+            </ul>
 
         </div>
 
-        <div class="bg-slate-800 p-6 rounded-xl">
+        <!-- Database -->
+        <div
+            class="bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300">
 
-            <h3 class="font-semibold text-lg">
+            <div class="text-4xl mb-4">🗄️</div>
+
+            <h3 class="text-xl font-semibold text-white">
                 Database Layer
             </h3>
 
-            <p class="text-gray-300 mt-2">
-                PostgreSQL optimized for analytics queries.
+            <p class="text-gray-400 mt-3">
+                High-performance PostgreSQL database optimized for transactional and analytical queries.
             </p>
+
+            <ul class="mt-4 space-y-2 text-gray-300 text-sm">
+                <li>• PostgreSQL</li>
+                <li>• Indexed Queries</li>
+                <li>• Stored Procedures</li>
+                <li>• Optimized Analytics Queries</li>
+                <li>• Secure Data Access</li>
+            </ul>
+
+        </div>
+
+        <!-- Cloud -->
+        <div
+            class="bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/20 hover:-translate-y-2 transition-all duration-300">
+
+            <div class="text-4xl mb-4">☁️</div>
+
+            <h3 class="text-xl font-semibold text-white">
+                Cloud Architecture
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+                Deployed on cloud platforms for high availability, scalability, and reliability.
+            </p>
+
+            <ul class="mt-4 space-y-2 text-gray-300 text-sm">
+                <li>• AWS EC2, S3, RDS for scalable hosting</li>
+                <li>• Azure App Services & SQL Database</li>
+                <li>• CI/CD Pipelines for automated deployments</li>
+                <li>• Load Balancers & Auto-scaling</li>
+                <li>• Secure access and monitoring</li>
+            </ul>
 
         </div>
 
