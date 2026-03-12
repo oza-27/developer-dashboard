@@ -1,90 +1,43 @@
-<div class="h-full bg-gradient-to-b from-slate-800 to-slate-900 shadow-xl flex flex-col transition-all duration-300"
-    [ngClass]="{ 'w-64': !collapsed, 'w-20': collapsed }">
+<div
+  class="h-full bg-gradient-to-b from-slate-800 to-slate-900 shadow-xl flex flex-col transition-all duration-300"
+  [ngClass]="{ 'w-64': !collapsed, 'w-20': collapsed }"
+>
+  <button
+    (click)="collapsed = !collapsed"
+    [attr.aria-label]="collapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+    class="text-gray-400 hover:text-white p-3 self-end focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+  >
+    <span *ngIf="!collapsed">⬅️</span>
+    <span *ngIf="collapsed">➡️</span>
+  </button>
 
-    <!-- Toggle Button -->
-    <button (click)="collapsed = !collapsed" class="text-gray-400 hover:text-white p-3 focus:outline-none self-end">
-        <span *ngIf="!collapsed">⬅️</span>
-        <span *ngIf="collapsed">➡️</span>
-    </button>
+  <div class="flex items-center justify-center py-6">
+    <h1 class="text-white font-bold text-xl transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed }">
+      Dev Dashboard
+    </h1>
+  </div>
 
-    <!-- Logo / Title -->
-    <div class="flex items-center justify-center py-6">
-        <h1 class="text-white font-bold text-xl transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed }">Dev
-            Dashboard</h1>
-    </div>
+  <nav class="flex-1 flex flex-col mt-4 space-y-1 relative">
+    <a
+      *ngFor="let item of navItems"
+      [routerLink]="item.route"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: !!item.exact }"
+      [attr.aria-label]="item.label"
+      class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+    >
+      <span
+        class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
+        *ngIf="isActiveRoute(item.route)"
+      ></span>
+      <span class="text-lg">{{ item.icon }}</span>
+      <span class="transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">
+        {{ item.label }}
+      </span>
+    </a>
+  </nav>
 
-    <!-- Navigation -->
-    <nav class="flex-1 flex flex-col mt-4 space-y-1 relative">
-
-        <!-- Dashboard -->
-        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"
-            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
-
-            <!-- Active Indicator -->
-            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
-                *ngIf="isActiveRoute('/')"></span>
-
-            <span class="text-lg">🏠</span>
-            <span class="transition-all duration-300"
-                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Dashboard</span>
-        </a>
-
-        <!-- Frontend Skills -->
-        <a routerLink="/frontend" routerLinkActive="active-link"
-            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
-            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
-                *ngIf="isActiveRoute('/frontend')"></span>
-            <span class="text-lg">💻</span>
-            <span class="transition-all duration-300"
-                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Frontend Skills</span>
-        </a>
-
-        <!-- Backend Skills -->
-        <a routerLink="/backend" routerLinkActive="active-link"
-            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
-            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
-                *ngIf="isActiveRoute('/backend')"></span>
-            <span class="text-lg">🛠️</span>
-            <span class="transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Backend
-                Skills</span>
-        </a>
-
-        <!-- AI Skills -->
-        <a routerLink="/ai" routerLinkActive="active-link"
-            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
-            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
-                *ngIf="isActiveRoute('/ai')"></span>
-            <span class="text-lg">🤖</span>
-            <span class="transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">AI
-                Skills</span>
-        </a>
-
-        <!-- Projects -->
-        <a routerLink="/projects" routerLinkActive="active-link"
-            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
-            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
-                *ngIf="isActiveRoute('/projects')"></span>
-            <span class="text-lg">📁</span>
-            <span class="transition-all duration-300"
-                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Projects</span>
-        </a>
-
-        <!-- Architecture -->
-        <a routerLink="/architecture" routerLinkActive="active-link"
-            class="relative flex items-center gap-3 p-3 rounded-lg text-gray-300 hover:text-indigo-400 hover:bg-slate-700 transition-all duration-300">
-            <span class="absolute left-0 top-0 h-full w-1 bg-indigo-400 rounded-tr-lg rounded-br-lg"
-                *ngIf="isActiveRoute('/architecture')"></span>
-            <span class="text-lg">🏗️</span>
-            <span class="transition-all duration-300"
-                [ngClass]="{ 'opacity-0': collapsed, 'ml-2': !collapsed }">Architecture</span>
-        </a>
-
-    </nav>
-
-    <!-- Footer -->
-    <div class="mt-auto text-center text-gray-500 text-xs py-4 transition-all duration-300"
-        [ngClass]="{ 'opacity-0': collapsed }">
-        © 2026 Soumy Oza
-    </div>
-
+  <div class="mt-auto text-center text-gray-500 text-xs py-4 transition-all duration-300" [ngClass]="{ 'opacity-0': collapsed }">
+    © 2026 Soumy Oza
+  </div>
 </div>

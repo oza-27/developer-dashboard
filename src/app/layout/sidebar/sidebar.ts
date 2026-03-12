@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+
+interface NavItem {
+  route: string;
+  label: string;
+  icon: string;
+  exact?: boolean;
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -9,12 +16,19 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
+  private readonly router = inject(Router);
   collapsed = false;
 
-  constructor(private router: Router) { }
+  readonly navItems: NavItem[] = [
+    { route: '/', label: 'Dashboard', icon: '🏠', exact: true },
+    { route: '/frontend', label: 'Frontend Skills', icon: '💻' },
+    { route: '/backend', label: 'Backend Skills', icon: '🛠️' },
+    { route: '/ai', label: 'AI Skills', icon: '🤖' },
+    { route: '/projects', label: 'Projects', icon: '📁' },
+    { route: '/architecture', label: 'Architecture', icon: '🏗️' },
+  ];
 
-  // Check active route for the indicator
-  isActiveRoute(route: string) {
+  isActiveRoute(route: string): boolean {
     return this.router.url === route;
   }
 }
