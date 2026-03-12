@@ -1,0 +1,18 @@
+<div class="bg-white/30 dark:bg-slate-800/40 backdrop-blur-lg border border-white/20 text-black dark:text-white p-5 rounded-xl transition-all duration-300">
+  <h2 class="text-xl font-semibold mb-6">Skill Proficiency</h2>
+
+  <div class="space-y-6">
+    <div *ngFor="let skill of skills">
+      <div class="flex justify-between mb-1">
+        <span class="font-medium">{{ skill.name }}</span>
+        <span class="text-sm text-gray-500 dark:text-gray-300">{{ skill.percentage }}%</span>
+      </div>
+
+      <div class="w-full bg-slate-300 dark:bg-slate-700 rounded-full h-3">
+        <div class="bg-blue-500 h-3 rounded-full transition-all duration-1000" [style.width.%]="skill.percentage"></div>
+      </div>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{ skill.technologies }}</p>
+    </div>
+  </div>
+</div>
